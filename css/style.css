@@ -1,3 +1,28 @@
+.mediumBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
+  position: relative;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); }
+  .mediumBox img {
+    display: block;
+    width: 4rem; }
+
+.largeBox {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
+  position: relative;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); }
+  .largeBox img {
+    display: block;
+    width: 4rem; }
+
 *,
 ::before,
 ::after {
@@ -24,7 +49,16 @@ body {
   perspective: 200rem;
   width: 100%;
   height: 100vh;
-  background-image: url("../img/bgportfolio.jpg");
+  position: relative; }
+
+.bgImage {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-image: url("../img/bgportfolio1.jpg");
+  filter: blur(1px);
   background-size: cover; }
 
 .app {
@@ -36,22 +70,20 @@ body {
   grid-template-rows: 0.5fr 6fr 0.5fr;
   gap: 1rem; }
 
-.tenp {
-  background-color: antiquewhite; }
-
 .header {
   display: flex;
-  justify-content: space-between;
-  background-color: rgba(215, 250, 228, 0.521); }
+  justify-content: space-between; }
 
 .headerNameBox {
   display: flex;
-  flex-direction: column; }
+  align-items: center; }
+  .headerNameBox__job {
+    font-size: 3.5rem;
+    line-height: 1; }
 
 .headerCtrContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
   line-height: 1; }
   .headerCtrContainer__box {
     padding: 0 2rem;
@@ -59,20 +91,32 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623); }
+    border-right: solid 0.5px rgba(255, 255, 255, 0.623);
+    border-left: solid 0.5px rgba(255, 255, 255, 0.623); }
     .headerCtrContainer__box--logo {
       width: 2.5rem; }
 
 .main {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  background-color: #684c3788;
   gap: 1rem; }
 
 .mainBox__left {
+  display: flex;
+  flex-direction: column;
+  border-top: solid 0.5px rgba(255, 255, 255, 0.623); }
+  .mainBox__left__name {
+    align-self: start;
+    justify-self: center;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    padding: 1rem 0; }
+
+.mainBox__leftWrapper {
   display: grid;
   grid-template-columns: 0.6fr 1.5fr;
-  gap: 1rem; }
+  gap: 1rem;
+  flex-grow: 1; }
 
 .logoContainer {
   display: flex;
@@ -85,19 +129,26 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0.5rem 1rem;
-    box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623); }
+    box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623); }
     .logoContainer__box--logo {
       width: 5rem; }
+
+.summaryHobbyWrapper {
+  display: flex;
+  flex-direction: column; }
 
 .summaryHobbyContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 1rem; }
+  gap: 1rem;
+  border-top: solid 0.5px rgba(255, 255, 255, 0.623);
+  border-bottom: solid 0.5px rgba(255, 255, 255, 0.623);
+  flex-grow: 1; }
 
 .summaryContainer {
   display: flex;
   justify-content: center;
-  box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623); }
+  border-bottom: solid 0.5px rgba(255, 255, 255, 0.623); }
 
 .hobbyContainer {
   display: grid;
@@ -108,7 +159,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623);
     padding: 0 1rem; }
     .hobbyContainer__box__left {
       display: flex;
@@ -117,29 +167,36 @@ body {
     .hobbyContainer__box__right {
       text-align: end; }
 
+.languageContainer {
+  display: flex;
+  justify-content: end;
+  border-bottom: solid 0.5px rgba(255, 255, 255, 0.623);
+  padding: .5rem 0; }
+
 .mainBox__middle {
   display: grid;
-  grid-template-rows: 1fr 1fr 2.5fr 1fr;
-  background: #00000081;
+  grid-template-rows: 1fr 1fr 2.6fr .9fr;
   gap: 1rem; }
 
 .weaponContainer {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  border-top: solid 0.5px rgba(255, 255, 255, 0.623); }
 
 .weaponlBox {
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623); }
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623); }
   .weaponlBox img {
     display: block;
     width: 4rem; }
 
 .projectSection {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  border-top: solid 0.5px rgba(255, 255, 255, 0.623); }
 
 .projectContainer {
   display: grid;
@@ -151,14 +208,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623); }
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623); }
   .projectBox img {
     display: block;
     width: 4rem; }
 
 .skillSection {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  border-top: solid 0.5px rgba(255, 255, 255, 0.623); }
 
 .skillContainer {
   flex-grow: 1;
@@ -166,18 +224,10 @@ body {
   grid-template-columns: 1fr 1fr 0.8fr;
   gap: 1rem; }
 
-.skillBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623); }
-  .skillBox img {
-    display: block;
-    width: 4rem; }
-
 .educateSection {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  border-top: solid 0.5px rgba(255, 255, 255, 0.623); }
 
 .educateContainer {
   display: grid;
@@ -189,7 +239,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0.5px 0.5px 2px 0.5px rgba(255, 255, 255, 0.623); }
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623); }
   .educateBox img {
     display: block;
     width: 4rem; }
@@ -197,6 +247,26 @@ body {
 .mainBox__right {
   display: flex; }
 
-.footer {
+.explainContainer {
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
+  flex-grow: 1; }
+
+.footerSection {
   display: flex;
-  background-color: rgba(177, 114, 31, 0.386); }
+  flex-direction: column;
+  justify-content: center;
+  align-items: end; }
+
+.footerContact {
+  display: flex;
+  align-items: center;
+  gap: 2rem; }
+  .footerContact__box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; }
+    .footerContact__box--logo {
+      display: flex;
+      align-items: center; }
+      .footerContact__box--logo img {
+        width: 2rem; }
