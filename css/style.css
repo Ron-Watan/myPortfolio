@@ -1,27 +1,122 @@
-.mediumBox {
+.skillBox {
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
   position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(255, 173, 10, 0.3), transparent);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px); }
-  .mediumBox img {
-    display: block;
-    width: 4rem; }
+  .skillBox::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 8%;
+    height: 100%;
+    background-color: #ffaf0b;
+    box-shadow: inset 0.5px 0.5px 5px 1px #be832a; }
+  .skillBox--bgText {
+    position: absolute;
+    font-family: "Permanent Marker", cursive;
+    font-size: 2.5rem;
+    color: rgba(223, 218, 212, 0.132);
+    line-height: 1;
+    right: 5%;
+    top: 30%;
+    z-index: -2; }
+  .skillBox span {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    left: 8%;
+    top: 0;
+    padding: 0 0.5rem; }
+  .skillBox img {
+    height: 5rem; }
 
-.largeBox {
+.projectBox {
   display: flex;
-  flex-grow: 1;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
   position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(255, 173, 10, 0.3), transparent);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px); }
-  .largeBox img {
-    display: block;
-    width: 4rem; }
+  .projectBox::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 8%;
+    height: 100%;
+    background-color: #ffaf0b;
+    box-shadow: inset 0.5px 0.5px 5px 1px #be832a; }
+  .projectBox--text {
+    position: absolute;
+    left: 15%;
+    font-size: 1.6rem;
+    line-height: 1; }
+  .projectBox img {
+    position: absolute;
+    right: 10%;
+    top: 0;
+    height: 5rem;
+    transform: scale(2); }
+
+.educateBox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(255, 173, 10, 0.3), transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); }
+  .educateBox::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 8%;
+    height: 100%;
+    background-color: #ffaf0b;
+    box-shadow: inset 0.5px 0.5px 5px 1px #be832a; }
+  .educateBox--text {
+    position: absolute;
+    left: 15%;
+    font-size: 1.6rem;
+    line-height: 1; }
+  .educateBox img {
+    position: absolute;
+    right: 10%;
+    top: 0;
+    height: 5rem;
+    transform: scale(2); }
+
+.weaponBox {
+  display: flex;
+  align-items: center;
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); }
+  .weaponBox__logo {
+    position: absolute;
+    left: 2%;
+    bottom: 0;
+    transform: scale(1.2); }
+  .weaponBox__img {
+    margin-left: 2rem;
+    height: 100%; }
+    .weaponBox__img img {
+      height: 100%; }
 
 *,
 ::before,
@@ -39,7 +134,6 @@ body {
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.6;
-  background-color: #1d344a;
   color: #fff; }
 
 .window {
@@ -53,8 +147,9 @@ body {
 
 .bgImage {
   position: absolute;
+  display: block;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   left: 0;
   top: 0;
   background-image: url("../img/bgportfolio1.jpg");
@@ -63,7 +158,7 @@ body {
 
 .app {
   width: 107rem;
-  height: 62rem;
+  height: 60rem;
   padding: 1rem;
   transform: rotateY(-20deg) translateX(-5%);
   display: grid;
@@ -143,7 +238,9 @@ body {
   gap: 1rem;
   border-top: solid 0.5px rgba(255, 255, 255, 0.623);
   border-bottom: solid 0.5px rgba(255, 255, 255, 0.623);
-  flex-grow: 1; }
+  flex-grow: 1;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); }
 
 .summaryContainer {
   display: flex;
@@ -164,34 +261,27 @@ body {
       display: flex;
       justify-content: center;
       align-items: center; }
+      .hobbyContainer__box__left img {
+        width: 4rem; }
     .hobbyContainer__box__right {
-      text-align: end; }
+      text-align: end;
+      font-size: 1.8rem; }
 
 .languageContainer {
   display: flex;
   justify-content: end;
   border-bottom: solid 0.5px rgba(255, 255, 255, 0.623);
-  padding: .5rem 0; }
+  padding: 0.5rem 0; }
 
 .mainBox__middle {
   display: grid;
-  grid-template-rows: 1fr 1fr 2.6fr .9fr;
+  grid-template-rows: 1fr 1fr 2.6fr 0.9fr;
   gap: 1rem; }
 
 .weaponContainer {
   display: flex;
   flex-direction: column;
   border-top: solid 0.5px rgba(255, 255, 255, 0.623); }
-
-.weaponlBox {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623); }
-  .weaponlBox img {
-    display: block;
-    width: 4rem; }
 
 .projectSection {
   display: flex;
@@ -200,18 +290,9 @@ body {
 
 .projectContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.8fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   flex-grow: 1; }
-
-.projectBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623); }
-  .projectBox img {
-    display: block;
-    width: 4rem; }
 
 .skillSection {
   display: flex;
@@ -221,7 +302,7 @@ body {
 .skillContainer {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 0.8fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem; }
 
 .educateSection {
@@ -231,7 +312,7 @@ body {
 
 .educateContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.8fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   flex-grow: 1; }
 
