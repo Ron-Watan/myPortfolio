@@ -18,3 +18,9 @@ body {
   line-height: 1.6;
   color: #fff;
 }
+a,
+a:link,
+a:active {
+  color: currentColor;
+  text-decoration: none;
+}
