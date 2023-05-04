@@ -285,10 +285,23 @@
   display: flex;
 }
 
-.explainContainer {
+.explandContainer {
   box-shadow: $borderShadow-white;
-  // flex-grow: 1;
-  height: 51rem;
+  // height: 50rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bgeagle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+  }
 
   @include glassbox;
 }

@@ -26,10 +26,10 @@
             <img src="img/apparelicon.svg" alt="">
             <div class="title">Apparel</div>
           </div>
-          <div class="headerCtrContainer__box">
+          <a href="img/Resume-Ronnarit-W.pdf" class="headerCtrContainer__box" target="_blank">
             <img src="img/resumeicon.svg" alt="">
             <div class="title">Resume</div>
-          </div>
+          </a>
           <div class="headerCtrContainer__box">
             <img src="img/playicon.svg" alt="">
             <div class="title">Play</div>
@@ -136,38 +136,64 @@
                 <div class="projectBox--text">FULL STACK</div><img src="img/backendlogo.svg" alt="">
               </div>
               <div class="projectBox" data-project="other">
-                <div class="projectBox--text">ETC</div><img src="img/otherlogo.svg" alt="">
+                <div class="projectBox--text">Other</div><img src="img/otherlogo.svg" alt="">
               </div>
             </div>
           </div>
           <div class="skillSection">
             <div class="title">Skills</div>
             <div class="skillContainer">
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="8">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">HTML</div><img src="img/htmllogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="8">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">CSS</div><img src="img/csslogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="7">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">JavaScript</div><img src="img/jslogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="4">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">React</div><img src="img/reactlogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="7">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">Sass</div><img src="img/sasslogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="5">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">BootStrap</div><img src="img/bstlogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="2">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">NextJs</div><img src="img/nextlogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="2">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">NodeJs</div><img src="img/nodejslogo.svg" alt="">
               </div>
-              <div class="skillBox"><span>09/10</span>
+              <div class="skillBox">
+                <div class="skillBox--bar"></div>
+
+                <div class="scoreBox"><span class="zero">0</span><span class="score" data-score="2">0</span><span class="full">/10</span></div>
                 <div class="skillBox--bgText">MongoDB</div><img src="img/mongologo.svg" alt="">
               </div>
             </div>
@@ -175,16 +201,17 @@
           <div class="educateSection">
             <div class="title">Education</div>
             <div class="educateContainer">
-              <div class="educateBox"><span>Computer Science</span><img src="img/complogo.svg" alt=""></div>
-              <div class="educateBox"><span>Engineering</span><img src="img/gearlogo.svg" alt=""></div>
-              <div class="educateBox"><span>Web Developer</span><img src="img/onlineedlogo.svg" alt=""></div>
+              <div class="educateBox" data-educate="1"><span>Computer Science</span><img src="img/complogo.svg" alt=""></div>
+              <div class="educateBox" data-educate="2"><span>Engineering</span><img src="img/gearlogo.svg" alt=""></div>
+              <div class="educateBox" data-educate="3"><span>Web Developer</span><img src="img/onlineedlogo.svg" alt=""></div>
             </div>
           </div>
         </div>
         <div class="mainBox__right">
-          <div class="explainContainer">
+          <div class="explandContainer">
 
             <!-- MY IFORMATION -->
+
             <div class="personalInfo hidden">
               <div class="personalInfo__name">
                 <p>Ronnarit Watanyootakorn</p>
@@ -198,19 +225,19 @@
                   a lot of opportunities to develop my soft skill such as teamwork, problem-solving, communication,
                   organization, creativity, and adaptability. I believe these would serve me and my employer in the future.</p>
               </div>
-
             </div>
 
 
 
 
-            <!-- PROJECT -->
-            <div class="project__frontEnd hidden">
+
+            <!-- PROJECT FRONT END-->
+            <div class="projectExpand hidden" data-project="frontend">
               <div class="projectBox disHover">
                 <div class="projectBox--text">FRONT END</div><img src="img/frontendlogo.svg" alt="">
               </div>
-              <div class="projectList">
 
+              <div class="projectList">
 
                 <div class="projectItem">
                   <div class="projectItem__title">
@@ -262,12 +289,38 @@
                   </a>
                 </div>
 
+                <div class="projectItem">
+                  <div class="projectItem__title">
+                    <div class="projectItem__title__box"><span>Nexter</span><img src="" alt="" class="starIcon"></div>
+                    <a href="https://github.com/Ron-Watan/Nexter-Project" target="_blank"><img src="img/giticon.svg" alt=""></a>
+                  </div>
+                  <a href="https://nexter-rdev.netlify.app/" class="projectItem__discription" target="_blank">
+                    <img src="img/projects/nexter.jpg" alt="">
+                    <p class="">A Real Estate Company Website</p>
+                  </a>
+                </div>
 
+                <div class="projectItem">
+                  <div class="projectItem__title">
+                    <div class="projectItem__title__box"><span>Natours</span><img src="" alt="" class="starIcon"></div>
+                    <a href="https://github.com/Ron-Watan/Natours-LProject" target="_blank"><img src="img/giticon.svg" alt=""></a>
+                  </div>
+                  <a href="https://natours-rdev.netlify.app/" class="projectItem__discription" target="_blank">
+                    <img src="img/projects/natours.jpg" alt="">
+                    <p class=""> Tour booking Website</p>
+                  </a>
+                </div>
 
-
-
-
-
+                <div class="projectItem">
+                  <div class="projectItem__title">
+                    <div class="projectItem__title__box"><span>Trillo</span><img src="" alt="" class="starIcon"></div>
+                    <a href="https://github.com/Ron-Watan/Trillo-Project" target="_blank"><img src="img/giticon.svg" alt=""></a>
+                  </div>
+                  <a href="https://trillo-rdev.netlify.app/" class="projectItem__discription" target="_blank">
+                    <img src="img/projects/trillo.jpg" alt="">
+                    <p class="">Online reservation services</p>
+                  </a>
+                </div>
 
               </div>
             </div>
@@ -275,20 +328,96 @@
 
 
 
+            <!-- PROJECT OTHER -->
 
+            <div class="projectExpand hidden" data-project="other">
+              <div class="projectBox disHover">
+                <div class="projectBox--text">Other</div><img src="img/otherlogo.svg" alt="">
+              </div>
+              <div class="projectList">
 
+                <div class="projectItem">
+                  <div class="projectItem__title">
+                    <div class="projectItem__title__box"><span>Guess Number Game</span><img src="" alt="" class="starIcon"></div>
+                    <a href="https://github.com/Ron-Watan/GuessNumber-Game" target="_blank"><img src="img/giticon.svg" alt=""></a>
+                  </div>
+                  <a href="https://guessnumber-game-rdev.netlify.app/" class="projectItem__discription" target="_blank">
+                    <img src="img/projects/guessno.jpg" alt="">
+                    <div class="">
+                      <div class="">Let's Play!</div>
+                    </div>
+                  </a>
+                </div>
 
+                <div class="projectItem">
+                  <div class="projectItem__title">
+                    <div class="projectItem__title__box"><span>Dice Game</span><img src="" alt="" class="starIcon"></div>
+                    <a href="https://github.com/Ron-Watan/Dice-Game" target="_blank"><img src="img/giticon.svg" alt=""></a>
+                  </div>
+                  <a href="https://dice-game-rdev.netlify.app/" class="projectItem__discription" target="_blank">
+                    <img src="img/projects/dice.jpg" alt="">
+                    <div class="">
+                      <div class="">Play at your own risk!</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
 
+            <!-- EDUCATION -->
+            <div class="projectExpand hidden" data-educate="1">
+              <div class="educateBox disHover">
+                <span>Computer Science</span><img src="img/complogo.svg" alt="">
+              </div>
+              <div class="projectList">
 
+                <div class="educateInst">
+                  <img src="/img/projects/elcamino.png" alt=""><span>El Camino College</span>
+                </div>
+                <div class="educateInfo">
+                  <div class="educateInfo__major"><span>Location:</span> <span>Torrance, CA, US</span></div>
+                  <div class="educateInfo__major"><span>Field:</span> <span>Computer Science</span></div>
+                  <div class="educateInfo__major"><span>Degree:</span> <span>Cerificate</span></div>
+                  <div class="educateInfo__major"><span>Year:</span> <span>2021</span></div>
+                </div>
+              </div>
+            </div>
 
+            <div class="projectExpand hidden" data-educate="2">
+              <div class="educateBox disHover">
+                <span>Engineering</span><img src="img/gearlogo.svg" alt="">
+              </div>
+              <div class="projectList">
 
+                <div class="educateInst">
+                  <img src="/img/projects/swu.png" alt=""><span>Srinakharinwirot University</span>
+                </div>
+                <div class="educateInfo">
+                  <div class="educateInfo__major"><span>Location:</span> <span>Bangkok, Thailand</span></div>
 
+                  <div class="educateInfo__major"><span>Field:</span> <span>Industrial Engineering</span></div>
+                  <div class="educateInfo__major"><span>Degree:</span> <span>Bachelor</span></div>
+                  <div class="educateInfo__major"><span>Year:</span> <span>2004</span></div>
+                </div>
+              </div>
+            </div>
 
+            <div class="projectExpand hidden" data-educate="3">
+              <div class="educateBox disHover">
+                <span>Web Developer</span><img src="img/gearlogo.svg" alt="">
+              </div>
+              <div class="projectList">
 
+                <div class="educateInst">
+                  <img src="/img/projects/online.png" alt=""><span>Online Learning</span>
+                </div>
+                <div class="educateInfo">
 
-
-
-
+                  <div class="educateInfo__major"><span>Field:</span> <span>Web Developer</span></div>
+                  <div class="educateInfo__major"><span>Year:</span> <span>2021-Present</span></div>
+                </div>
+              </div>
+            </div>
 
 
           </div>

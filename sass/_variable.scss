@@ -37,9 +37,10 @@ $color-black: #000;
 .hidden {
   opacity: 0;
   visibility: hidden;
-  height: 0;
 }
-
+.disable {
+  display: none !important;
+}
 .active-light-orange {
   background-color: rgba(255, 173, 10, 0.5);
   transform: scale(1.05) translate(-5%, -5%);
