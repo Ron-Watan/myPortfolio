@@ -8,7 +8,6 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
-  cursor: pointer;
   @include glassbox;
   &__logo {
     position: absolute;
@@ -475,4 +474,13 @@ $radar-green: #44ab17;
       font-weight: 300;
     }
   }
+}
+
+
+@keyframes appstart {
+  0%{
+
+  }
+
+  
 }

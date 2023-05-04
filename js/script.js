@@ -1,4 +1,4 @@
-
+const appEl = document.querySelector('.app')
 //Personal BTN
 const logoEagle = document.querySelector('.logoContainer__box')
 
@@ -17,10 +17,26 @@ const projectExpainEl = document.querySelectorAll('.projectExpand')
 
 
 
-// Skill BTN 
+// Skill BTN
 // const skillScoreEl = document.querySelectorAll('.scoreBox .score')
 // const skillBoxEl = document.querySelector('.skillBox')
 // const skillBoxBar = document.querySelector('.skillBox--bar')
+
+
+/// BUTTON : HEADER CONTROL
+
+const headerBtnParentEl = document.querySelector('.headerCtrContainer')
+
+
+headerBtnParentEl.addEventListener("click", function (e) {
+  const targetBtn = e.target.closest('.headerCtrContainer__box')
+  if (!targetBtn) return
+
+  if (targetBtn.dataset.hbtn == '1') {
+    console.log('ok')
+    appEl.classList.toggle('apparelTransform')
+  }
+})
 
 
 
@@ -218,22 +234,27 @@ const body = document.querySelector('body')
 
 
 
-// body.addEventListener('click', function () {
-skillBoxEl.forEach(el => {
-  const bar = el.querySelector('.skillBox--bar')
-  const score = +(el.querySelector('.score').dataset.score)
-  bar.style.height = `${+score * 10}%`
-  bar.style.backgroundColor = '#ffaf0b'
-  bar.style.boxShadow = 'inset 0.5px 0.5px 5px 1px #be832a'
+const hobbyCountEl = document.querySelectorAll('.hobbyCount')
+const daysOldEL=document.querySelector('.daysOld')
 
-  animateValue(el.querySelector('.score'), 0, score, 300);
-})
+function barAnimate() {
+  skillBoxEl.forEach(el => {
+    const bar = el.querySelector('.skillBox--bar')
+    const score = +(el.querySelector('.score').dataset.score)
+    bar.style.height = `${+score * 10}%`
+    bar.style.backgroundColor = '#ffaf0b'
+    bar.style.boxShadow = 'inset 0.5px 0.5px 5px 1px #be832a'
 
+    animateValue(el.querySelector('.score'), 0, score, 300);
+  })
+  hobbyCountEl.forEach(el => {
+    const score = +(el.dataset.count)
+    animateValue(el, 0, score, 300);
+  })
 
-// })
-
-
-
+  const daysOldScore=daysOldEL.dataset.count
+  animateValue(document.querySelector('.daysOld'), 0, daysOldScore, 300);
+}
 
 
 
@@ -249,4 +270,29 @@ function animateValue(el, start, end, duration) {
   };
   window.requestAnimationFrame(step);
 }
+
+
+
+// body.addEventListener('click', function () {
+setTimeout(function () {
+  appEl.style.opacity = ".5"
+}, 500)
+setTimeout(function () {
+  appEl.classList.add('apparelTransform')
+}, 1000)
+setTimeout(function () {
+  appEl.style.opacity = "1"
+}, 1500)
+setTimeout(function () {
+  barAnimate()
+}, 1500)
+// })
+
+
+// headerNameBox
+// headerCtrContainer
+// &__name
+
+
+
 

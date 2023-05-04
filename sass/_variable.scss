@@ -59,6 +59,10 @@ $color-black: #000;
   }
 }
 
+.apparelTransform {
+  transform: rotateY(-20deg) translateX(-5%) !important;
+}
+
 @mixin glassbox {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

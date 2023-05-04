@@ -36,6 +36,9 @@
     background-color: #e28e10 !important;
     transform: scale(1.05) translate(-2%, -2%); }
 
+.apparelTransform {
+  transform: rotateY(-20deg) translateX(-5%) !important; }
+
 *,
 ::before,
 ::after {
@@ -63,7 +66,7 @@ a:active {
 .window {
   display: flex;
   justify-content: end;
-  padding: 5rem;
+  padding: 4rem 5rem 5rem;
   perspective: 200rem;
   width: 100%;
   height: 100vh;
@@ -84,10 +87,12 @@ a:active {
   width: 107rem;
   height: 60rem;
   padding: 1rem;
-  transform: rotateY(-20deg) translateX(-5%);
+  transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
-  gap: 1rem; }
+  gap: 1rem;
+  transition: all 1s;
+  opacity: 0; }
 
 .header {
   display: flex;
@@ -118,6 +123,10 @@ a:active {
     .headerCtrContainer__box img {
       height: 2rem; }
     .headerCtrContainer__box:hover {
+      background-color: #e28e1098;
+      border-right: #e28e1098;
+      transform: scale(1.05) translate(-5%, -5%); }
+    .headerCtrContainer__box:active {
       background-color: #e28e10;
       border-right: #e28e10;
       transform: scale(1.05) translate(-5%, -5%); }
@@ -351,7 +360,6 @@ a:active {
   position: relative;
   overflow: hidden;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
-  cursor: pointer;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px); }
   .weaponBox__logo {
@@ -708,3 +716,6 @@ a:active {
     gap: 1rem; }
     .educateInfo__major span:first-child {
       font-weight: 300; }
+
+@keyframes appstart {
+  0% { } }
