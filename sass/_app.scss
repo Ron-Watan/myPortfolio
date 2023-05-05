@@ -10,7 +10,7 @@
   width: 100vw;
   @include response('tab-land') {
     justify-content: center;
-    padding: 0 4rem;
+    padding: 4rem 4rem;
   }
   @include response('tab-port') {
     padding: 2rem;
