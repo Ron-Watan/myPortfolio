@@ -25,6 +25,25 @@ const overlayApparelEl = document.querySelector('.overlayApparel')
 
 
 
+// console.log(avatar.offsetLeft)
+let avaatarLeft = 1300
+window.addEventListener("resize", function (e) {
+  console.log(window.innerWidth)
+  if (window.innerWidth > 1400) {
+    avatar.style.left = `0px`
+  }
+  else if (window.innerWidth < 1400 && window.innerWidth > 1300) {
+    avatar.style.left = `${(window.innerWidth - 1300) - 100}px`
+    avatar.style.opacity = `1`
+  }
+  else if (window.innerWidth < 1300) avatar.style.opacity = `0`
+
+  // canvas.width = window.innerWidth;
+  // canvas.height = window.innerHeight;
+  // render();
+});
+
+
 
 
 // Skill BTN

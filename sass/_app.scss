@@ -1,37 +1,57 @@
 .window {
   display: flex;
   justify-content: end;
+
   padding: 4rem 5rem 5rem;
   perspective: 200rem;
-  width: 100%;
-  height: 100vh;
-
   position: relative;
-  // overflow-y: hidden;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  @include response('tab-land') {
+    justify-content: center;
+    padding: 0 4rem;
+  }
+  @include response('tab-port') {
+    padding: 2rem;
+    overflow-y: scroll;
+
+    background: #222;
+  }
 }
 .bgImage {
   position: absolute;
   display: block;
-  width: 100%;
-  height: 51em;
+  // width: 100%;
+  // height: 51em;
+  height: 100vh;
+  width: 100vw;
   left: 0;
   top: 0;
   background-image: url('../img/bgportfolio1.jpg');
   filter: blur(1px);
   background-size: cover;
+  @include response('tab-port') {
+    background-image: none;
+  }
 }
 .app {
   width: 107rem;
   height: 60rem;
   padding: 1rem;
-  // transform: rotateY(-20deg) translateX(-5%);
-  transform: translateX(-5%);
 
+  transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
   gap: 1rem;
   transition: all 1s;
   opacity: 0;
+  @include response('tab-land') {
+    transform: translateX(-2%);
+  }
+  @include response('desktop-m') {
+    transform: translateX(0);
+  }
 }
 
 .header {
@@ -74,7 +94,7 @@
       border-right: $color-orange-06;
       transform: scale(1.05) translate(-5%, -5%);
     }
-    &:active{
+    &:active {
       background-color: $color-orange-05;
       border-right: $color-orange-05;
       transform: scale(1.05) translate(-5%, -5%);
@@ -85,8 +105,14 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  // background-color: #684c3788;
   gap: 1rem;
+  @include response('tab-port') {
+    grid-template-columns: 1fr;
+    // grid-template-row: 1fr 1fr 1fr;
+    @include response('tab-port') {
+      gap: 2rem;
+    }
+  }
 }
 
 /// MAIN LEFT ///
@@ -95,6 +121,7 @@
   display: flex;
   flex-direction: column;
   border-top: $border-white;
+
   &__name {
     align-self: start;
     justify-self: center;
@@ -109,6 +136,9 @@
   grid-template-columns: 0.6fr 1.5fr;
   gap: 1rem;
   flex-grow: 1;
+  @include response('tab-port') {
+    grid-template-columns: 7fr 1fr;
+  }
 }
 
 .logoContainer {
@@ -116,6 +146,14 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  @include response('tab-port') {
+    grid-column: 2/3;
+    grid-row: 1;
+  }
+  @include response('phone') {
+    grid-column: 2/3;
+    grid-row: 1;
+  }
 
   &__box {
     display: flex;
@@ -165,6 +203,13 @@
   display: flex;
   flex-direction: column;
   cursor: default;
+  @include response('tab-port') {
+    flex-direction: row-reverse;
+    grid-column: 1;
+    grid-row: 1;
+
+    gap: 1rem;
+  }
 }
 .summaryHobbyContainer {
   display: grid;
@@ -174,6 +219,14 @@
   border-bottom: $border-white;
   flex-grow: 1;
   @include glassbox;
+  @include response('tab-port') {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include response('phone') {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .summaryContainer {
   border-bottom: $border-white;
@@ -186,6 +239,10 @@
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+    @include response('phone') {
+      align-items: start;
+      padding: 0.5rem;
+    }
   }
 }
 
@@ -194,7 +251,10 @@
   grid-template-rows: repeat(3, 1fr);
   gap: 1rem;
   line-height: 1.2;
-
+  @include response('phone') {
+    display: flex;
+    justify-content: space-around;
+  }
   &__box {
     display: flex;
     justify-content: space-between;
@@ -215,7 +275,6 @@
       }
     }
     &__right {
-      
       text-align: end;
       font-size: 1.8rem;
     }
@@ -229,6 +288,9 @@
   padding: 0.5rem 0;
   img {
     width: 2rem;
+  }
+  @include response('tab-port') {
+    display: none;
   }
 }
 
@@ -323,6 +385,10 @@
   justify-content: center;
   align-items: end;
   gap: 1rem;
+  @include response('tab-port') {
+    padding-bottom: 4rem;
+    align-items: center;
+  }
 }
 
 .footerContact {
