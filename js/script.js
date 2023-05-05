@@ -1,3 +1,6 @@
+const avatar = document.querySelector('.avatar')
+
+
 const appEl = document.querySelector('.app')
 //Personal BTN
 const logoEagle = document.querySelector('.logoContainer__box')
@@ -17,6 +20,13 @@ const projectExpainEl = document.querySelectorAll('.projectExpand')
 
 
 
+// OTHER
+const overlayApparelEl = document.querySelector('.overlayApparel')
+
+
+
+
+
 // Skill BTN
 // const skillScoreEl = document.querySelectorAll('.scoreBox .score')
 // const skillBoxEl = document.querySelector('.skillBox')
@@ -27,14 +37,15 @@ const projectExpainEl = document.querySelectorAll('.projectExpand')
 
 const headerBtnParentEl = document.querySelector('.headerCtrContainer')
 
-
 headerBtnParentEl.addEventListener("click", function (e) {
   const targetBtn = e.target.closest('.headerCtrContainer__box')
   if (!targetBtn) return
 
+  // BTN : APARREL
   if (targetBtn.dataset.hbtn == '1') {
-    console.log('ok')
     appEl.classList.toggle('apparelTransform')
+    apparelSwitch()
+
   }
 })
 
@@ -235,7 +246,7 @@ const body = document.querySelector('body')
 
 
 const hobbyCountEl = document.querySelectorAll('.hobbyCount')
-const daysOldEL=document.querySelector('.daysOld')
+const daysOldEL = document.querySelector('.daysOld')
 
 function barAnimate() {
   skillBoxEl.forEach(el => {
@@ -252,7 +263,7 @@ function barAnimate() {
     animateValue(el, 0, score, 300);
   })
 
-  const daysOldScore=daysOldEL.dataset.count
+  const daysOldScore = daysOldEL.dataset.count
   animateValue(document.querySelector('.daysOld'), 0, daysOldScore, 300);
 }
 
@@ -274,25 +285,107 @@ function animateValue(el, start, end, duration) {
 
 
 // body.addEventListener('click', function () {
+
+// test.addEventListener('click', function () {
+// clearInterval(amimateAvatar)
+// test.style.transition = 'all 1s';
+// setTimeout(() => {
+// test.style.transform = 'scale(1.1)';
+// test.style.left = '2%';
+
+// }, 300);
+
+
 setTimeout(function () {
   appEl.style.opacity = ".5"
-}, 500)
-setTimeout(function () {
-  appEl.classList.add('apparelTransform')
+
 }, 1000)
 setTimeout(function () {
+  appEl.classList.add('apparelTransform')
+}, 1200)
+setTimeout(function () {
   appEl.style.opacity = "1"
-}, 1500)
+
+}, 2000)
 setTimeout(function () {
   barAnimate()
-}, 1500)
-// })
-
-
-// headerNameBox
-// headerCtrContainer
-// &__name
+}, 2000)
 
 
 
 
+
+let imgHtml
+let imgeNo
+let imgFrame = 1
+
+for (imgeNo = 1200; imgeNo < 1500; imgeNo += 5) {
+  imgHtml = `<img src="img/anime/0${imgeNo}-removebg-preview.png" alt="" class="avatarImg avatarHidden frame-${imgFrame}">`
+  avatar.insertAdjacentHTML("afterbegin", imgHtml);
+  imgFrame++
+}
+let windowActive = true
+let frameStart = 1
+let frameEnd = 60
+
+let frameMiddle = 25 // Start BanckEord
+let frameBegin = 14 // End BanckWord
+
+const startWindow = setInterval(() => {
+  overlayApparelEl.classList.add('overlayApparel')
+  document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
+  if (frameStart >= 2) document.querySelector(`.frame-${frameStart - 1}`).classList.toggle('avatarHidden')
+  frameStart++
+  if (frameStart > frameEnd) {
+    clearInterval(startWindow)
+    overlayApparelEl.classList.remove('overlayApparel')
+
+    frameStart = frameMiddle
+  }
+}, 100);
+
+
+function apparelSwitch() {
+
+  if (windowActive == true) {
+    overlayApparelEl.classList.add('overlayApparel')
+
+    const interVBackward = setInterval(() => {
+      if (frameStart == frameMiddle) {
+        document.querySelector(`.frame-${frameEnd}`).classList.add('avatarHidden')
+        document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
+      }
+      else if (frameStart < frameMiddle) {
+        document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
+        document.querySelector(`.frame-${frameStart + 1}`).classList.toggle('avatarHidden')
+      }
+
+      frameStart--
+
+      if (frameStart < frameBegin) {
+        clearInterval(interVBackward)
+        overlayApparelEl.classList.remove('overlayApparel')
+
+        frameStart = frameBegin
+        windowActive = false
+      }
+    }, 100);
+  }
+  else {
+    overlayApparelEl.classList.add('overlayApparel')
+    const interVForward = setInterval(() => {
+      document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
+      document.querySelector(`.frame-${frameStart + 1}`).classList.toggle('avatarHidden')
+      frameStart++
+      console.log()
+      if (frameStart >= frameMiddle) {
+        clearInterval(interVForward)
+        overlayApparelEl.classList.remove('overlayApparel')
+
+        frameStart = frameMiddle - 1
+        windowActive = true
+      }
+    }, 100);
+
+  }
+}

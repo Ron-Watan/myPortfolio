@@ -112,6 +112,7 @@ a:active {
   align-items: center;
   line-height: 1; }
   .headerCtrContainer__box {
+    position: relative;
     padding: 0.5rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -717,5 +718,33 @@ a:active {
     .educateInfo__major span:first-child {
       font-weight: 300; }
 
-@keyframes appstart {
-  0% { } }
+.avatar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 43.8rem;
+  height: 56.9rem;
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: background-image 0.08s linear;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.avatarImage {
+  left: 0;
+  bottom: 0;
+  width: 43.8rem;
+  height: 56.9rem; }
+
+.avatarHidden {
+  display: none; }
+
+.overlayApparel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 10%;
+  z-index: 10;
+  cursor: progress; }

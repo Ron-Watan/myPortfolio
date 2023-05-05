@@ -476,11 +476,52 @@ $radar-green: #44ab17;
   }
 }
 
+// .test {
+//   position: absolute;
+//   left: -2%;
+//   bottom: 0%;
+//   width: 43.8rem;
+//   height: 56.9rem;
+//   transform: scale(1);
+//   filter: drop-shadow();
+//   transform-origin: bottom;
+//   transition: background-image 0.08s linear;
+//   background-image: url('../img/test/01200-removebg-preview.png');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }
+.avatar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 43.8rem;
+  height: 56.9rem;
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: background-image 0.08s linear;
 
-@keyframes appstart {
-  0%{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.avatarImage {
+  left: 0;
+  bottom: 0;
+  width: 43.8rem;
+  height: 56.9rem;
+}
 
-  }
+.avatarHidden {
+  display: none;
+}
 
-  
+.overlayApparel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 10%;
+  z-index: 10;
+  cursor: progress;
 }
