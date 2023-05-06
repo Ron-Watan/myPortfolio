@@ -11,6 +11,47 @@ $color-green-03: #02e08d;
 $color-green-02: #37885a;
 $color-black: #000;
 
+@mixin response($breakpoint) {
+  @if ($breakpoint == 'phone') {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'tab-port') {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'desktop-m') {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'tab-land') {
+    @media (max-width: 1250px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'avatarBP') {
+    @media (max-width: 1300px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'desktop-big') {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}
+/////////////////////////////
+.bp-phone-disable {
+  @include response('phone') {
+    display: none !important;
+  }
+}
+.bp-tapPort-disable {
+  @include response('tab-port') {
+    display: none !important;
+  }
+}
+
+////////////////////////////
+
 .disHover {
   cursor: default !important;
   &:hover {
@@ -61,6 +102,10 @@ $color-black: #000;
 
 .apparelTransform {
   transform: rotateY(-20deg) translateX(-5%) !important;
+
+  @include response('tab-port') {
+    transform: rotateY(0deg) translateX(0) !important;
+  }
 }
 
 @mixin glassbox {
@@ -76,7 +121,6 @@ $borderTest: solid 1px red;
 // border-radius: 10px;
 // border: 1px solid rgba( 255, 255, 255, 0.18 );
 
-
 // MEDIA QUERY MANAGER
 /*
 0 - 600px:       phone          Phone 
@@ -86,28 +130,3 @@ $borderTest: solid 1px red;
 1800px +:        desktop-big    Desktop Big
 
 */
-
-@mixin response($breakpoint) {
-  @if ($breakpoint == 'phone') {
-    @media (max-width: 600px) {
-      @content;
-    }
-  } @else if ($breakpoint == 'tab-port') {
-    @media (max-width: 900px) {
-      @content;
-    }
-  } @else if ($breakpoint == 'desktop-m') {
-    @media (max-width: 1000px) {
-      @content;
-    }
-
-  } @else if ($breakpoint == 'tab-land') {
-    @media (max-width: 1250px) {
-      @content;
-    }
-  } @else if ($breakpoint == 'desktop-big') {
-    @media (max-width: 1800px) {
-      @content;
-    }
-  }
-}

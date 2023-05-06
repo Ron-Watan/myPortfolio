@@ -15,7 +15,6 @@
   @include response('tab-port') {
     padding: 2rem;
     overflow-y: scroll;
-
     background: #222;
   }
 }
@@ -38,7 +37,7 @@
 .app {
   width: 107rem;
   height: 60rem;
-  padding: 1rem;
+  padding: rem;
 
   transform: translateX(-5%);
   display: grid;
@@ -46,10 +45,10 @@
   gap: 1rem;
   transition: all 1s;
   opacity: 0;
-  @include response('tab-land') {
-    transform: translateX(-2%);
-  }
   @include response('desktop-m') {
+    transform: translateX(0);
+  }
+  @include response('tab-land') {
     transform: translateX(0);
   }
 }
@@ -191,6 +190,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 0.5rem;
+
       span {
         display: block;
         font-size: 1.4rem;
@@ -241,6 +241,8 @@
     gap: 1rem;
     @include response('phone') {
       align-items: start;
+      flex-grow: 1;
+
       padding: 0.5rem;
     }
   }
