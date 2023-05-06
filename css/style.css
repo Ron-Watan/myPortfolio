@@ -140,6 +140,9 @@ a:active {
   @media (max-width: 1250px) {
     .app {
       transform: translateX(0); } }
+  @media (max-width: 600px) {
+    .app {
+      gap: 2rem; } }
 
 .header {
   display: flex;
@@ -153,6 +156,9 @@ a:active {
   .headerNameBox__job {
     font-size: 3.5rem;
     line-height: 1; }
+  @media (max-width: 600px) {
+    .headerNameBox {
+      font-size: 3rem; } }
 
 .headerCtrContainer {
   display: flex;
@@ -235,6 +241,9 @@ a:active {
     cursor: default; }
     .logoContainer__box img {
       width: 5rem; }
+      @media (max-width: 600px) {
+        .logoContainer__box img {
+          width: 4rem; } }
     .logoContainer__box span {
       font-size: 1rem; }
     .logoContainer__box__count {
@@ -255,6 +264,9 @@ a:active {
       .logoContainer__box__status span {
         display: block;
         font-size: 1.4rem; }
+        @media (max-width: 600px) {
+          .logoContainer__box__status span {
+            font-size: 1.1rem; } }
 
 .summaryHobbyWrapper {
   display: flex;
@@ -263,9 +275,7 @@ a:active {
   @media (max-width: 900px) {
     .summaryHobbyWrapper {
       flex-direction: row-reverse;
-      grid-column: 1;
-      grid-row: 1;
-      gap: 1rem; } }
+      gap: .5rem; } }
 
 .summaryHobbyContainer {
   display: grid;
@@ -328,9 +338,15 @@ a:active {
         width: 3.5rem;
         transform: scale(2);
         opacity: 0.1; }
+        @media (max-width: 600px) {
+          .hobbyContainer__box__left img {
+            transform: scale(1); } }
     .hobbyContainer__box__right {
       text-align: end;
       font-size: 1.8rem; }
+      @media (max-width: 600px) {
+        .hobbyContainer__box__right {
+          font-size: 1.4rem; } }
 
 .languageContainer {
   display: flex;
@@ -499,7 +515,7 @@ a:active {
     justify-content: space-between; }
     @media (max-width: 600px) {
       .weaponBox__img img {
-        width: 60%; } }
+        width: 100%; } }
     .weaponBox__img span {
       position: absolute;
       right: 0;
