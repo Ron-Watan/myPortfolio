@@ -131,7 +131,7 @@ a:active {
   transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
-  gap: 3rem;
+  gap: 1rem;
   transition: all 1s;
   opacity: 0; }
   @media (max-width: 1000px) {
@@ -142,7 +142,7 @@ a:active {
       transform: translateX(0); } }
   @media (max-width: 600px) {
     .app {
-      gap: 2rem; } }
+      gap: 1rem; } }
 
 .header {
   display: flex;
@@ -438,16 +438,21 @@ a:active {
   flex-direction: column;
   justify-content: center;
   align-items: end;
+  margin-top: 1rem;
   gap: 1rem; }
   @media (max-width: 900px) {
     .footerSection {
-      padding-bottom: 4rem;
+      padding-bottom: 5rem;
       align-items: center; } }
 
 .footerContact {
   display: flex;
   align-items: center;
   gap: 2rem; }
+  @media (max-width: 600px) {
+    .footerContact {
+      flex-direction: column;
+      gap: .5rem; } }
   .footerContact__box {
     display: flex;
     align-items: center;
@@ -506,6 +511,9 @@ a:active {
     bottom: 0;
     transform: scale(1.2);
     z-index: 2; }
+    @media (max-width: 600px) {
+      .weaponBox__logo {
+        transform: scale(1); } }
   .weaponBox__img {
     margin-left: 2rem;
     position: relative;
@@ -634,6 +642,9 @@ a:active {
       color: #c0bfbf; }
   .skillBox img {
     height: 5rem; }
+    @media (max-width: 600px) {
+      .skillBox img {
+        height: 4.5rem; } }
   .skillBox:hover {
     background: linear-gradient(to right, rgba(2, 224, 141, 0.3), transparent);
     transform: scale(1.05) translate(-5%, -5%); }

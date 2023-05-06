@@ -1,7 +1,6 @@
 .window {
   display: flex;
   justify-content: end;
-
   padding: 4rem 5rem 5rem;
   perspective: 200rem;
   position: relative;
@@ -42,7 +41,7 @@
   transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
-  gap: 3rem;
+  gap: 1rem;
   transition: all 1s;
   opacity: 0;
   @include response('desktop-m') {
@@ -52,7 +51,7 @@
     transform: translateX(0);
   }
   @include response('phone') {
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 
@@ -380,7 +379,6 @@
 
 .explandContainer {
   box-shadow: $borderShadow-white;
-  // height: 50rem;
   position: relative;
   &::before {
     content: '';
@@ -395,8 +393,8 @@
     background-position: center;
     opacity: 0.3;
   }
-
   @include glassbox;
+
 }
 
 .footerSection {
@@ -404,10 +402,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: end;
+  margin-top: 1rem;
   gap: 1rem;
   @include response('tab-port') {
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
     align-items: center;
+
   }
 }
 
@@ -415,6 +415,13 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  @include response('phone') {
+    flex-direction: column;
+    gap: .5rem;
+
+  }
+
   &__box {
     display: flex;
     align-items: center;
