@@ -42,7 +42,7 @@
   transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
-  gap: 1rem;
+  gap: 3rem;
   transition: all 1s;
   opacity: 0;
   @include response('desktop-m') {

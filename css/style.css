@@ -131,7 +131,7 @@ a:active {
   transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
-  gap: 1rem;
+  gap: 3rem;
   transition: all 1s;
   opacity: 0; }
   @media (max-width: 1000px) {
@@ -499,7 +499,7 @@ a:active {
     justify-content: space-between; }
     @media (max-width: 600px) {
       .weaponBox__img img {
-        width: 100%; } }
+        width: 60%; } }
     .weaponBox__img span {
       position: absolute;
       right: 0;

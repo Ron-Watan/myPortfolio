@@ -65,7 +65,7 @@
     justify-content: space-between;
     img {
       @include response('phone') {
-       width: 100%;
+       width: 60%;
       }
     }
     span {
