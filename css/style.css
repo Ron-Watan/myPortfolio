@@ -96,7 +96,8 @@ a:active {
   position: relative;
   overflow: hidden;
   height: 100vh;
-  width: 100vw; }
+  max-width: 160rem;
+  margin: 0 auto; }
   @media (max-width: 1250px) {
     .window {
       justify-content: center;
@@ -435,8 +436,7 @@ a:active {
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  margin-top: 1rem;
-  gap: 1rem; }
+  margin-top: 1rem; }
   @media (max-width: 900px) {
     .footerSection {
       padding-bottom: 5rem; } }
@@ -490,14 +490,26 @@ a:active {
 
 .overlayApparel {
   position: absolute;
-  right: 0;
+  right: 15rem;
   top: 0;
-  width: 30%;
-  height: 10%;
+  width: 10%;
+  height: 9%;
   z-index: 10;
   cursor: progress; }
   @media (max-width: 900px) {
     .overlayApparel {
+      display: none; } }
+
+.overlayAvatar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 43rem;
+  height: 56rem;
+  z-index: 10;
+  cursor: progress; }
+  @media (max-width: 900px) {
+    .overlayAvatar {
       display: none; } }
 
 .weaponBox {
@@ -653,6 +665,9 @@ a:active {
   .skillBox:hover {
     background: linear-gradient(to right, rgba(2, 224, 141, 0.3), transparent);
     transform: scale(1.05) translate(-5%, -5%); }
+    @media (max-width: 600px) {
+      .skillBox:hover {
+        transform: scale(1) translate(0, 0); } }
   .skillBox:hover .skillBox--bar {
     background-color: #02e08d !important;
     box-shadow: inset 0.5px 0.5px 5px 1px #37885a !important; }
@@ -807,9 +822,10 @@ a:active {
     border-top: solid 0.5px rgba(255, 255, 255, 0.623);
     font-weight: 500;
     overflow-y: auto; }
-    .personalInfo__intro p:not(:last-child) {
-      font-size: 1.3rem;
-      margin-bottom: 1rem; }
+    .personalInfo__intro p {
+      font-size: 1.3rem; }
+      .personalInfo__intro p:not(:last-child) {
+        margin-bottom: 1rem; }
     .personalInfo__intro::-webkit-scrollbar {
       width: 0.4rem; }
     .personalInfo__intro::-webkit-scrollbar-track {
@@ -883,6 +899,12 @@ a:active {
             right: 5%;
             top: 35%;
             height: 2rem; } }
+        @media (max-width: 600px) {
+          .projectItem__title__box .starIcon {
+            position: absolute;
+            right: 5%;
+            top: 55%;
+            height: 1.5rem; } }
     .projectItem__title img {
       height: 1.5rem;
       filter: grayscale(1) brightness(10);
@@ -940,6 +962,9 @@ a:active {
   gap: 2rem;
   border-bottom: solid 0.5px rgba(255, 255, 255, 0.623);
   padding-bottom: 1rem; }
+  @media (max-width: 600px) {
+    .educateInst {
+      justify-content: center; } }
   .educateInst img {
     height: 6rem;
     padding-left: 2rem; }
@@ -959,8 +984,8 @@ a:active {
 
 .avatar {
   position: absolute;
-  left: 0px;
-  top: 20%;
+  left: 0;
+  top: 15rem;
   width: 30rem;
   height: 100%;
   transform: scale(1);
@@ -968,7 +993,8 @@ a:active {
   transition: background-image 0.08s linear;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  cursor: pointer; }
   @media (max-width: 900px) {
     .avatar {
       display: none; } }

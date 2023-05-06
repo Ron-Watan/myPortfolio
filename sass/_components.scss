@@ -13,18 +13,30 @@
     height: 20rem;
   }
   @include response('phone') {
-    width:12rem;
+    width: 12rem;
     height: 12rem;
-    
   }
 }
 
 .overlayApparel {
   position: absolute;
-  right: 0;
+  right: 15rem;
   top: 0;
-  width: 30%;
-  height: 10%;
+  width: 10%;
+  height: 9%;
+  z-index: 10;
+  cursor: progress;
+  @include response('tab-port') {
+    display: none;
+  }
+}
+
+.overlayAvatar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 43rem;
+  height: 56rem;
   z-index: 10;
   cursor: progress;
   @include response('tab-port') {
@@ -68,7 +80,7 @@
     justify-content: space-between;
     img {
       @include response('phone') {
-       width: 100%;
+        width: 100%;
       }
     }
     span {
@@ -224,6 +236,9 @@
   &:hover {
     background: linear-gradient(to right, rgba($color-green-03, 0.3), transparent);
     transform: scale(1.05) translate(-5%, -5%);
+    @include response('phone') {
+      transform: scale(1) translate(0, 0);
+    }
   }
   &:hover &--bar {
     background-color: $color-green-03 !important;
@@ -391,7 +406,7 @@ $radar-green: #44ab17;
 
 /// PERSONAL INFO ///
 
-.personalInfo {
+.personalInfo{
   display: flex;
   flex-direction: column;
   max-height: 50rem;
@@ -420,8 +435,8 @@ $radar-green: #44ab17;
     font-weight: 500;
     overflow-y: auto;
     p {
+      font-size: 1.3rem;
       &:not(:last-child) {
-        font-size: 1.3rem;
         margin-bottom: 1rem;
       }
     }
@@ -458,7 +473,6 @@ $radar-green: #44ab17;
   @include response('tab-port') {
     width: 100%;
   }
-
 }
 
 .projectList {
@@ -472,7 +486,6 @@ $radar-green: #44ab17;
   @include response('tab-port') {
     width: 100%;
   }
-
 }
 
 .projectItem {
@@ -515,6 +528,12 @@ $radar-green: #44ab17;
           right: 5%;
           top: 35%;
           height: 2rem;
+        }
+        @include response('phone') {
+          position: absolute;
+          right: 5%;
+          top: 55%;
+          height: 1.5rem;
         }
       }
     }
@@ -601,6 +620,9 @@ $radar-green: #44ab17;
   gap: 2rem;
   border-bottom: $border-white;
   padding-bottom: 1rem;
+  @include response('phone') {
+    justify-content: center;
+  }
   img {
     height: 6rem;
     padding-left: 2rem;
@@ -626,8 +648,8 @@ $radar-green: #44ab17;
 
 .avatar {
   position: absolute;
-  left: 0px;
-  top: 20%;
+  left: 0;
+  top: 15rem;
   // margin-right: 80%;
   width: 30rem;
   // height: 56.9rem;
@@ -640,6 +662,7 @@ $radar-green: #44ab17;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
   @include response('tab-port') {
     display: none;
   }

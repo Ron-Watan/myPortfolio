@@ -6,7 +6,8 @@
   position: relative;
   overflow: hidden;
   height: 100vh;
-  width: 100vw;
+  max-width: 160rem;
+  margin: 0 auto;
   @include response('tab-land') {
     justify-content: center;
     padding: 4rem 4rem;
@@ -400,7 +401,6 @@
   justify-content: center;
   align-items: end;
   margin-top: 1rem;
-  gap: 1rem;
   @include response('tab-port') {
     padding-bottom: 5rem;
   }
@@ -418,7 +418,6 @@
   @include response('phone') {
     flex-direction: column;
     align-items: end;
-
     gap: 0rem;
   }
 
@@ -428,7 +427,6 @@
     gap: 0.5rem;
     margin-bottom: 1rem;
     @include response('phone') {
-
       margin-bottom: 1.5rem;
     }
     &--logo {
@@ -436,7 +434,6 @@
       align-items: center;
       padding-right: 0.5rem;
       border-right: $border-white;
-
 
       img {
         height: 2rem;

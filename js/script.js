@@ -35,6 +35,9 @@ const daysOldEL = document.querySelector('.daysOld')
 // OTHER
 const body = document.querySelector('body')
 const overlayApparelEl = document.querySelector('.overlayApparel')
+const overlayAvatarEL = document.querySelector('.overlayAvatar')
+
+
 
 let avatarBP = window.matchMedia("(max-width: 1300px)")
 let desktopM = window.matchMedia("(max-width: 1050px)")
@@ -47,7 +50,7 @@ let phone = window.matchMedia("(max-width: 600px)")
 let avaatarLeft = 1300
 
 window.addEventListener("resize", function (e) {
-  console.log(window.innerWidth)
+  console.log(window.innerHeight)
   if (window.innerWidth > 1400) {
     avatar.style.left = `0px`
   }
@@ -60,6 +63,9 @@ window.addEventListener("resize", function (e) {
   }
 
 });
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -75,6 +81,7 @@ window.addEventListener("resize", function (e) {
 
 
 headerBtnParentEl.addEventListener("click", function (e) {
+  e.preventDefault()
   const targetBtn = e.target.closest('.headerCtrContainer__box')
   if (!targetBtn) return
   // BTN : APARREL
@@ -85,7 +92,10 @@ headerBtnParentEl.addEventListener("click", function (e) {
   }
 })
 
-
+avatar.addEventListener("click", function () {
+  appEl.classList.toggle('apparelTransform')
+  apparelSwitch()
+})
 
 // BUTTON : PERSONAL CONTROL
 
@@ -107,6 +117,7 @@ logoEagle.addEventListener('click', function () {
 
 // BUTTON : PROJECTS CONTROL
 projectParentEl.addEventListener('click', function (e) {
+  e.preventDefault()
   const targetEl = e.target.closest('.projectBox')
   if (!targetEl && targetEl.dataset.project == 'backend') return
   if (targetEl.dataset.project == 'frontend') {
@@ -173,6 +184,7 @@ projectParentEl.addEventListener('click', function (e) {
 
 // BUTTON : Education CONTROL
 educateParentEl.addEventListener('click', function (e) {
+  e.preventDefault()
   const targetEl = e.target.closest('.educateBox')
   if (!targetEl) return
   if (targetEl.dataset.educate == '1') {
@@ -357,12 +369,14 @@ function startAvater() {
 
   const startWindow = setInterval(() => {
     overlayApparelEl.classList.remove('disable')
+    overlayAvatarEL.classList.remove('disable')
     document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
     if (frameStart >= 2) document.querySelector(`.frame-${frameStart - 1}`).classList.toggle('avatarHidden')
     frameStart++
     if (frameStart > frameEnd) {
       clearInterval(startWindow)
       overlayApparelEl.classList.add('disable')
+      overlayAvatarEL.classList.add('disable')
 
       frameStart = frameMiddle
     }
@@ -370,9 +384,8 @@ function startAvater() {
 }
 
 if (!avatarBP.matches) {
-  console.log('test')
   startAvater()
-} 
+}
 
 
 
@@ -382,6 +395,7 @@ function apparelSwitch() {
 
   if (windowActive == true) {
     overlayApparelEl.classList.remove('disable')
+    overlayAvatarEL.classList.remove('disable')
 
     const interVBackward = setInterval(() => {
       if (frameStart == frameMiddle) {
@@ -398,6 +412,7 @@ function apparelSwitch() {
       if (frameStart < frameBegin) {
         clearInterval(interVBackward)
         overlayApparelEl.classList.add('disable')
+        overlayAvatarEL.classList.add('disable')
 
         frameStart = frameBegin
         windowActive = false
@@ -406,6 +421,8 @@ function apparelSwitch() {
   }
   else {
     overlayApparelEl.classList.remove('disable')
+    overlayAvatarEL.classList.remove('disable')
+
     const interVForward = setInterval(() => {
       document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
       document.querySelector(`.frame-${frameStart + 1}`).classList.toggle('avatarHidden')
@@ -414,6 +431,7 @@ function apparelSwitch() {
       if (frameStart >= frameMiddle) {
         clearInterval(interVForward)
         overlayApparelEl.classList.add('disable')
+        overlayAvatarEL.classList.add('disable')
 
         frameStart = frameMiddle - 1
         windowActive = true
