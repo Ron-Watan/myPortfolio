@@ -217,7 +217,7 @@
   img {
     height: 5rem;
     @include response('phone') {
-      height: 4.5rem;
+      height: 4rem;
     }
   }
 

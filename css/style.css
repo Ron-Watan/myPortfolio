@@ -649,7 +649,7 @@ a:active {
     height: 5rem; }
     @media (max-width: 600px) {
       .skillBox img {
-        height: 4.5rem; } }
+        height: 4rem; } }
   .skillBox:hover {
     background: linear-gradient(to right, rgba(2, 224, 141, 0.3), transparent);
     transform: scale(1.05) translate(-5%, -5%); }
