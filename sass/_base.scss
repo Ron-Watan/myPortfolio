@@ -8,15 +8,13 @@
 
 html {
   font-size: 62.5%;
-  @include response('tab-land') {
+  @include response('desktop-m') {
     font-size: 60%;
   }
-  @include response('desktop-m') {
+  @include response('phone') {
     font-size: 55%;
   }
-  @include response('tab-port') {
-    font-size: 55%;
-  }
+
 }
 
 body {
