@@ -406,7 +406,7 @@ $radar-green: #44ab17;
 
 /// PERSONAL INFO ///
 
-.personalInfo{
+.personalInfo {
   display: flex;
   flex-direction: column;
   max-height: 50rem;
@@ -436,9 +436,7 @@ $radar-green: #44ab17;
     overflow-y: auto;
     p {
       font-size: 1.3rem;
-      &:not(:last-child) {
-        margin-bottom: 1rem;
-      }
+      margin-bottom: 1rem;
     }
 
     &::-webkit-scrollbar {

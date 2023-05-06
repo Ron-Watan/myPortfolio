@@ -823,9 +823,8 @@ a:active {
     font-weight: 500;
     overflow-y: auto; }
     .personalInfo__intro p {
-      font-size: 1.3rem; }
-      .personalInfo__intro p:not(:last-child) {
-        margin-bottom: 1rem; }
+      font-size: 1.3rem;
+      margin-bottom: 1rem; }
     .personalInfo__intro::-webkit-scrollbar {
       width: 0.4rem; }
     .personalInfo__intro::-webkit-scrollbar-track {
