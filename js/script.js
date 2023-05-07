@@ -88,7 +88,7 @@ function AnimateHireWindow(rotateGDegree) {
 
 
 headerBtnParentEl.addEventListener("click", function (e) {
-  e.preventDefault()
+  // e.preventDefault()
   const targetBtn = e.target.closest('.headerCtrContainer__box')
 
   if (!targetBtn) return
