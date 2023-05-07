@@ -94,7 +94,7 @@ a:active {
   padding: 4rem 5rem 5rem;
   perspective: 200rem;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
   height: 100vh;
   max-width: 160rem;
   margin: 0 auto; }
@@ -102,6 +102,9 @@ a:active {
     .window {
       justify-content: center;
       padding: 4rem 4rem; } }
+  @media (max-width: 901px) {
+    .window {
+      overflow-y: visible; } }
   @media (max-width: 900px) {
     .window {
       padding: 2rem;
@@ -125,13 +128,13 @@ a:active {
 .app {
   width: 107rem;
   height: 60rem;
-  padding: rem;
   transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
   gap: 1rem;
   transition: all 1s;
-  opacity: 0; }
+  opacity: 0;
+  margin: auto 0; }
   @media (max-width: 1000px) {
     .app {
       transform: translateX(0); } }
@@ -987,7 +990,6 @@ a:active {
   left: 0;
   top: 15rem;
   width: 30rem;
-  height: 100%;
   transform: scale(1);
   transform-origin: top;
   transition: background-image 0.08s linear;
@@ -998,6 +1000,10 @@ a:active {
   @media (max-width: 900px) {
     .avatar {
       display: none; } }
+  @media (max-width: 1300px) {
+    .avatar {
+      opacity: 0;
+      visibility: hidden; } }
 
 .avatarImage {
   left: 0;
@@ -1012,7 +1018,7 @@ a:active {
   transition: all 0.3s; }
 
 .hireHover:hover img {
-  transform: rotate(-180deg); }
+  transform: rotateY(-180deg); }
 
 .hireContainer {
   position: absolute;
@@ -1067,5 +1073,5 @@ a:active {
   .hireBtn img {
     height: 4rem;
     width: 4rem;
-    transform: rotate(-180deg);
+    transform: rotateY(-180deg);
     transition: all 0.3s; }

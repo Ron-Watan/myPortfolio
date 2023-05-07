@@ -4,13 +4,16 @@
   padding: 4rem 5rem 5rem;
   perspective: 200rem;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
   height: 100vh;
   max-width: 160rem;
   margin: 0 auto;
   @include response('tab-land') {
     justify-content: center;
     padding: 4rem 4rem;
+  }
+  @include response('scrollChange') {
+    overflow-y: visible;
   }
   @include response('tab-port') {
     padding: 2rem;
@@ -37,14 +40,13 @@
 .app {
   width: 107rem;
   height: 60rem;
-  padding: rem;
-
   transform: translateX(-5%);
   display: grid;
   grid-template-rows: 0.5fr 6fr 0.5fr;
   gap: 1rem;
   transition: all 1s;
   opacity: 0;
+  margin: auto 0;
   @include response('desktop-m') {
     transform: translateX(0);
   }

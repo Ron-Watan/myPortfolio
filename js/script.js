@@ -53,18 +53,18 @@ let phone = window.matchMedia("(max-width: 600px)")
 ///////////////////////////////////////////////////////////////////////////////////
 
 // WINDOW-CONTROL-RESIZE
-let avaatarLeft = 1300
+let avatarHiddenPos = 1300
+let avatarVisible = true
 
 window.addEventListener("resize", function (e) {
-  console.log(window.innerHeight)
   if (window.innerWidth > 1400) {
     avatar.style.left = `0px`
   }
-  else if (window.innerWidth < 1400 && window.innerWidth > 1300) {
-    avatar.style.left = `${(window.innerWidth - 1300) - 100}px`
+  else if (window.innerWidth < 1400 && window.innerWidth > avatarHiddenPos) {
+    avatar.style.left = `${(window.innerWidth - avatarHiddenPos) - 100}px`
     avatar.style.opacity = `1`
   }
-  else if (window.innerWidth <= 1300) {
+  else if (window.innerWidth < avatarHiddenPos) {
     avatar.style.opacity = `0`
   }
 
@@ -105,6 +105,7 @@ headerBtnParentEl.addEventListener("click", function (e) {
       appEl.classList.toggle('apparelTransform')
       apparelSwitch()
       AnimateHireWindow(0)
+  
     }
     else {
       AnimateHireWindow(0)
@@ -206,7 +207,6 @@ projectParentEl.addEventListener('click', function (e) {
     personalInfoEl.classList.add('hidden')
   }
 })
-
 
 
 
@@ -373,12 +373,9 @@ function animateValue(el, start, end, duration) {
 
 /// AVARTAR - ANIMATION ///
 
-
 let imgHtml
 let imgeNo
 let imgFrame = 1
-
-
 
 let windowActive = true
 let frameStart = 1
@@ -420,13 +417,17 @@ function startAvater() {
   }, 100);
 }
 
-if (!avatarBP.matches) {
+// Avatar Break Point
+if (!tabPort.matches) {
   startAvater()
+  avatarVisible = true
+} else {
+  avatarVisible = false
 }
 
+/// SWITCH AVATAR & WINDOW - ANIMATION ///
 
 
-/// SWITCH AVATAR-WINDOW - ANIMATION ///
 
 function apparelSwitch() {
 
@@ -434,13 +435,12 @@ function apparelSwitch() {
     removeOverlay()
 
     const interVBackward = setInterval(() => {
-      if (frameStart == frameMiddle) {
+      if (frameStart == frameMiddle && avatarVisible) {
         document.querySelector(`.frame-${frameEnd}`).classList.add('avatarHidden')
         document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
       }
-      else if (frameStart < frameMiddle) {
-        document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
-        document.querySelector(`.frame-${frameStart + 1}`).classList.toggle('avatarHidden')
+      else if (frameStart < frameMiddle && avatarVisible) {
+        animateShortAvatar()
       }
 
       frameStart--
@@ -458,19 +458,27 @@ function apparelSwitch() {
     removeOverlay()
 
     const interVForward = setInterval(() => {
-      document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
-      document.querySelector(`.frame-${frameStart + 1}`).classList.toggle('avatarHidden')
+      if (avatarVisible) animateShortAvatar()
       frameStart++
       console.log()
       if (frameStart >= frameMiddle) {
         clearInterval(interVForward)
         addOverlay()
-
         frameStart = frameMiddle - 1
         windowActive = true
       }
     }, 100);
 
   }
+  if (avatarBP.matches && !avatarVisible) {
+    startAvater()
+
+    avatarVisible = true
+  }
 }
 
+function animateShortAvatar() {
+  document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
+  document.querySelector(`.frame-${frameStart + 1}`).classList.toggle('avatarHidden')
+
+}

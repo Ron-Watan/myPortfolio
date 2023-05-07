@@ -20,6 +20,10 @@ $color-black: #000;
     @media (max-width: 900px) {
       @content;
     }
+  } @else if ($breakpoint == 'scrollChange') {
+    @media (max-width: 901px) {
+      @content;
+    }
   } @else if ($breakpoint == 'desktop-m') {
     @media (max-width: 1000px) {
       @content;
@@ -38,7 +42,6 @@ $color-black: #000;
     }
   }
 }
-
 
 @mixin glassbox {
   backdrop-filter: blur(4px);
@@ -114,8 +117,6 @@ $color-black: #000;
     transform: rotateY(0deg) translateX(0) !important;
   }
 }
-
-
 
 $borderTest: solid 1px red;
 // background: rgba( 255, 255, 255, 0.25 );
