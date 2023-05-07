@@ -53,6 +53,9 @@
   @include response('tab-land') {
     transform: translateX(0);
   }
+  @include response('tab-port') {
+    margin: 0 0;
+  }
   @include response('phone') {
     gap: 1rem;
   }

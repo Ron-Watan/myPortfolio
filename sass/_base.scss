@@ -15,6 +15,10 @@ html {
   @include response('phone') {
     font-size: 55%;
   }
+  @include response('phone-small') {
+    font-size: 40%;
+  }
+
 }
 
 body {

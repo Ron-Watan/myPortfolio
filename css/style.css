@@ -73,6 +73,9 @@ html {
   @media (max-width: 600px) {
     html {
       font-size: 55%; } }
+  @media (max-width: 400px) {
+    html {
+      font-size: 40%; } }
 
 body {
   font-family: 'Exo', sans-serif;
@@ -141,6 +144,9 @@ a:active {
   @media (max-width: 1250px) {
     .app {
       transform: translateX(0); } }
+  @media (max-width: 900px) {
+    .app {
+      margin: 0 0; } }
   @media (max-width: 600px) {
     .app {
       gap: 1rem; } }

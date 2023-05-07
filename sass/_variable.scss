@@ -12,6 +12,11 @@ $color-green-02: #37885a;
 $color-black: #000;
 
 @mixin response($breakpoint) {
+  @if ($breakpoint == 'phone-small') {
+    @media (max-width: 400px) {
+      @content;
+    }
+  }
   @if ($breakpoint == 'phone') {
     @media (max-width: 600px) {
       @content;
