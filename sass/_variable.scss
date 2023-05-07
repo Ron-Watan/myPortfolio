@@ -38,6 +38,13 @@ $color-black: #000;
     }
   }
 }
+
+
+@mixin glassbox {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
 /////////////////////////////
 .bp-phone-disable {
   @include response('phone') {
@@ -76,8 +83,8 @@ $color-black: #000;
 }
 
 .hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 .disable {
   display: none !important;
@@ -108,10 +115,7 @@ $color-black: #000;
   }
 }
 
-@mixin glassbox {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
+
 
 $borderTest: solid 1px red;
 // background: rgba( 255, 255, 255, 0.25 );

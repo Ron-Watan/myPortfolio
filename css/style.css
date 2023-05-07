@@ -24,8 +24,8 @@
     background-color: rgba(255, 173, 10, 0.5); }
 
 .hidden {
-  opacity: 0;
-  visibility: hidden; }
+  opacity: 0 !important;
+  visibility: hidden !important; }
 
 .disable {
   display: none !important; }
@@ -171,6 +171,7 @@ a:active {
     justify-content: center;
     border-right: solid 0.5px rgba(255, 255, 255, 0.623);
     transition: all 0.2s;
+    z-index: 0;
     cursor: pointer; }
     .headerCtrContainer__box img {
       height: 2rem; }
@@ -490,9 +491,9 @@ a:active {
 
 .overlayApparel {
   position: absolute;
-  right: 15rem;
+  right: 0rem;
   top: 0;
-  width: 10%;
+  width: 22%;
   height: 9%;
   z-index: 10;
   cursor: progress; }
@@ -1006,3 +1007,65 @@ a:active {
 
 .avatarHidden {
   display: none; }
+
+.hireHover img {
+  transition: all 0.3s; }
+
+.hireHover:hover img {
+  transform: rotate(-180deg); }
+
+.hireContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  left: 30%;
+  top: 25%;
+  transition: all 0.5s;
+  perspective: 150rem; }
+
+.hireWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  box-shadow: 0.5px 0.5px 2px 0.2px rgba(255, 255, 255, 0.623);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 3rem 5rem;
+  transform: rotateY(60deg);
+  transform-origin: left;
+  transition: all 1s; }
+  .hireWrapper h2 {
+    font-size: 4rem;
+    text-align: center;
+    border-bottom: solid 0.5px rgba(255, 255, 255, 0.623); }
+
+.subHire {
+  flex-direction: column;
+  align-items: start; }
+  .subHire__box {
+    gap: 1rem; }
+    .subHire__box--logo {
+      width: 5rem; }
+      .subHire__box--logo img {
+        width: 100%;
+        height: 3rem; }
+    .subHire__box--info {
+      font-size: 2rem;
+      font-weight: 400; }
+
+.hireBtn {
+  width: 6rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.5s 0.5s; }
+  .hireBtn:hover img {
+    transform: rotate(0deg); }
+  .hireBtn img {
+    height: 4rem;
+    width: 4rem;
+    transform: rotate(-180deg);
+    transition: all 0.3s; }

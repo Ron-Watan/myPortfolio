@@ -32,6 +32,12 @@ const skillBoxBar = document.querySelector('.skillBox--bar')
 const hobbyCountEl = document.querySelectorAll('.hobbyCount')
 const daysOldEL = document.querySelector('.daysOld')
 
+// HIRE 
+const hireContainerEl = document.querySelector('.hireContainer')
+
+const hireBtnEL = document.querySelector('.hireBtn')
+
+
 // OTHER
 const body = document.querySelector('body')
 const overlayApparelEl = document.querySelector('.overlayApparel')
@@ -46,7 +52,7 @@ let phone = window.matchMedia("(max-width: 600px)")
 
 ///////////////////////////////////////////////////////////////////////////////////
 
-// WINDOW-CONTROL
+// WINDOW-CONTROL-RESIZE
 let avaatarLeft = 1300
 
 window.addEventListener("resize", function (e) {
@@ -62,39 +68,61 @@ window.addEventListener("resize", function (e) {
     avatar.style.opacity = `0`
   }
 
+
 });
 
-
-console.log(appEl)
 
 
 //////////////////////////////////////////////////////////////////////////////////////
 
 
 
-
-///////////////////////////////////////////////////////////////////////////////////
-
-
-
 /// BUTTON : HEADER CONTROL
+
+function AnimateHireWindow(rotateGDegree) {
+  hireContainerEl.classList.toggle('hidden')
+  hireContainerEl.querySelector('.hireWrapper').style.transform = `rotateY(${rotateGDegree}deg)`
+  hireBtnEL.classList.toggle('hidden')
+  appEl.classList.toggle('hidden')
+}
 
 
 headerBtnParentEl.addEventListener("click", function (e) {
   e.preventDefault()
   const targetBtn = e.target.closest('.headerCtrContainer__box')
+
   if (!targetBtn) return
+
   // BTN : APARREL
   if (targetBtn.dataset.hbtn == '1') {
     appEl.classList.toggle('apparelTransform')
     apparelSwitch()
+  }
+  // BTN : PLAY or Hire
+
+  else if (targetBtn.dataset.hbtn == '3') {
+    if (windowActive == true) {
+      appEl.classList.toggle('apparelTransform')
+      apparelSwitch()
+      AnimateHireWindow(0)
+    }
+    else {
+      AnimateHireWindow(0)
+    }
 
   }
+})
+
+hireBtnEL.addEventListener('click', function () {
+  appEl.classList.toggle('apparelTransform')
+  apparelSwitch()
+  AnimateHireWindow(60)
 })
 
 avatar.addEventListener("click", function () {
   appEl.classList.toggle('apparelTransform')
   apparelSwitch()
+  appEl.style.opacity = `1`
 })
 
 // BUTTON : PERSONAL CONTROL
@@ -359,6 +387,17 @@ let frameEnd = 60
 let frameMiddle = 25 // Start BanckEord
 let frameBegin = 14 // End BanckWord
 
+
+function addOverlay() {
+  overlayApparelEl.classList.add('disable')
+  overlayAvatarEL.classList.add('disable')
+}
+
+function removeOverlay() {
+  overlayApparelEl.classList.remove('disable')
+  overlayAvatarEL.classList.remove('disable')
+}
+
 function startAvater() {
 
   for (imgeNo = 1200; imgeNo < 1500; imgeNo += 5) {
@@ -368,15 +407,13 @@ function startAvater() {
   }
 
   const startWindow = setInterval(() => {
-    overlayApparelEl.classList.remove('disable')
-    overlayAvatarEL.classList.remove('disable')
+    removeOverlay()
     document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
     if (frameStart >= 2) document.querySelector(`.frame-${frameStart - 1}`).classList.toggle('avatarHidden')
     frameStart++
     if (frameStart > frameEnd) {
       clearInterval(startWindow)
-      overlayApparelEl.classList.add('disable')
-      overlayAvatarEL.classList.add('disable')
+      addOverlay()
 
       frameStart = frameMiddle
     }
@@ -394,8 +431,7 @@ if (!avatarBP.matches) {
 function apparelSwitch() {
 
   if (windowActive == true) {
-    overlayApparelEl.classList.remove('disable')
-    overlayAvatarEL.classList.remove('disable')
+    removeOverlay()
 
     const interVBackward = setInterval(() => {
       if (frameStart == frameMiddle) {
@@ -411,8 +447,7 @@ function apparelSwitch() {
 
       if (frameStart < frameBegin) {
         clearInterval(interVBackward)
-        overlayApparelEl.classList.add('disable')
-        overlayAvatarEL.classList.add('disable')
+        addOverlay()
 
         frameStart = frameBegin
         windowActive = false
@@ -420,8 +455,7 @@ function apparelSwitch() {
     }, 100);
   }
   else {
-    overlayApparelEl.classList.remove('disable')
-    overlayAvatarEL.classList.remove('disable')
+    removeOverlay()
 
     const interVForward = setInterval(() => {
       document.querySelector(`.frame-${frameStart}`).classList.toggle('avatarHidden')
@@ -430,8 +464,7 @@ function apparelSwitch() {
       console.log()
       if (frameStart >= frameMiddle) {
         clearInterval(interVForward)
-        overlayApparelEl.classList.add('disable')
-        overlayAvatarEL.classList.add('disable')
+        addOverlay()
 
         frameStart = frameMiddle - 1
         windowActive = true

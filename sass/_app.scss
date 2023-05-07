@@ -90,6 +90,7 @@
     justify-content: center;
     border-right: $border-white;
     transition: all 0.2s;
+    z-index: 0;
     cursor: pointer;
     img {
       height: 2rem;
