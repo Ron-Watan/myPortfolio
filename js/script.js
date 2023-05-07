@@ -105,7 +105,7 @@ headerBtnParentEl.addEventListener("click", function (e) {
       appEl.classList.toggle('apparelTransform')
       apparelSwitch()
       AnimateHireWindow(0)
-  
+
     }
     else {
       AnimateHireWindow(0)
@@ -482,3 +482,12 @@ function animateShortAvatar() {
   document.querySelector(`.frame-${frameStart + 1}`).classList.toggle('avatarHidden')
 
 }
+
+// DAYS OF BIRTH //
+const daysOldEl = document.querySelector('.daysOld')
+
+const birthDay = new Date(1979, 11, 16)
+const dateNow = Date.now()
+const daysOld = Math.round(((dateNow - birthDay) / 1000) / 60 / 60 / 24)
+
+daysOldEl.dataset.count = daysOld
