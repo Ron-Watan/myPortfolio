@@ -236,7 +236,7 @@
   &:hover {
     background: linear-gradient(to right, rgba($color-green-03, 0.3), transparent);
     transform: scale(1.05) translate(-5%, -5%);
-    @include response('phone') {
+    @include response('tab-port') {
       transform: scale(1) translate(0, 0);
     }
   }

@@ -675,7 +675,7 @@ a:active {
   .skillBox:hover {
     background: linear-gradient(to right, rgba(2, 224, 141, 0.3), transparent);
     transform: scale(1.05) translate(-5%, -5%); }
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
       .skillBox:hover {
         transform: scale(1) translate(0, 0); } }
   .skillBox:hover .skillBox--bar {
